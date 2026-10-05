@@ -1,0 +1,61 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --border-color: #cccccc;
+  --button-bg: #e0e0e0;
+  --button-text: #1a1a1a;
+  --warning-color: orange;
+  --over-color: red;
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --border-color: #444444;
+  --button-bg: #333333;
+  --button-text: #f0f0f0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  margin: 2rem;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+textarea {
+  width: 100%;
+  max-width: 500px;
+  height: 150px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* Counter indicator states */
+#char-count.warning {
+  color: var(--warning-color);
+}
+
+#char-count.over {
+  color: var(--over-color);
+  font-weight: bold;
+}
