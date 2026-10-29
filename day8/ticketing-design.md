@@ -172,7 +172,7 @@ Three mechanisms, each catching a different failure:
 
    If another user already holds that seat, the database rejects the insert with a unique-constraint violation, and the app returns `409 Conflict`. The check and the claim are the same atomic operation — there is no window between "is it free?" and "mark it taken" for a second request to slip through.
 
-2. **`tickets.seat_id` is UNIQUE.** Payment writes a ticket row for the seat:
+2. **`tickets.seat_id` is UNIQUE.** Payment writes a ticket row for the seat inside one transaction:
 
    ```sql
    BEGIN;
